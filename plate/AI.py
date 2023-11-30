@@ -32,8 +32,8 @@ def ocr_image_with_paddle(img, coordinates):
     return str(plate_chars), conf
 
 def detection_(img):
-    # model_path = os.getcwd() + "\\plate_prediction.pt"
-    model_path = "C:/Users/vanhu/.spyder-py3/plate/plate_prediction.pt"
+    model_path = os.getcwd() + "\\plate_prediction.pt"
+    # model_path = "C:/Users/vanhu/.spyder-py3/plate/plate_prediction.pt"
     lisense_plate_detector = YOLO(model_path)
     # per = lisense_plate_detector.predict(show=True, source = img_path)
     results = lisense_plate_detector(img)[0]
@@ -53,8 +53,8 @@ def detection_(img):
     return img
     
 def main():
-    img_path = "C:/Users/vanhu/.spyder-py3/plate/test1.jpg"
-    # img_path = os.getcwd() + "\\test1.jpg"
+    # img_path = "C:/Users/vanhu/.spyder-py3/plate/test1.jpg"
+    img_path = os.getcwd() + "\\test1.jpg"
     img = cv2.imread(img_path)
     detection_(img)
 
